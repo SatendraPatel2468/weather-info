@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const path = require('path')
+const port = process.env.PORT || 8000;
 const ejs = require('ejs')
 const geocode = require('./src/utils/geocode')
 const forecast = require('./src/utils/forecast')
@@ -103,6 +104,6 @@ app.get('*', (req, res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log('Listening to the port 3000')
+app.listen(port, () => {
+    console.log(`Listening to the port ${port}`)
 })
